@@ -4,4 +4,4 @@ Class diagram of the software (click the image for a larger version):
 
 ![Alt text](https://github.com/mb44/SudokuSolver-Backtracking/blob/master/SudokuSolver-ClassDiagram.png?raw=true "Sudoku Class Diagram")
 
-![Alt text](https://github.com/mb44/SudokuSolver-Backtracking/blob/master/screenshot.png?raw=true "Sudoku Class Diagram")
+![Alt text](https://github.com/mb44/SudokuSolver-Backtracking/blob/master/screenshot.PNG?raw=true "Sudoku Class Diagram")
