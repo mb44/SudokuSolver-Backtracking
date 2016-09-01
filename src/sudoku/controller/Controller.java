@@ -17,7 +17,7 @@ public class Controller {
 	}
 	
 	public void execute(int mode) {
-		if (mode == -1 ) {
+		if (mode == -1) {
 			return;
 		} else if (mode == view.SINGLE_SOLVE_MODE) {
 			executeSolveSingle();
@@ -27,37 +27,28 @@ public class Controller {
 	}
 	
 	public void executeSolveSingle() {
-		String su = view.getInput();
+		String sudoku = view.getInput();
 		
 		int p[][] = new int[9][9];
 		
-		for (int i=0; i<su.length(); i++) {
+		for (int i=0; i<sudoku.length(); i++) {
 			/*
 			if (su.charAt(i) < '0' || su.charAt(i) > '9') {
 				model.setError("Error reading puzzle");
 				System.out.println("break");
-				break;
+				return;
 			}
 			*/
 			
 			int row = i / 9;
 			int col = i % 9;
-			p[row][col] = Character.getNumericValue(su.charAt(i));
+			p[row][col] = Character.getNumericValue(sudoku.charAt(i));
 		}
-		
-		/*
-		for (int row=0; row<9; row++) {
-			for (int col=0; col<9; col++) {
-				System.out.print(p[row][col] + " ");
-			}
-			System.out.println();
-		}
-		*/
 		
 		model.solveSingle(p);
 	}
 	
 	public void executeSolveBatch() {
-		//String su = view.getInput();
+		//String suduko = view.getInput();
 	}
 }

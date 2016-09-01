@@ -87,6 +87,9 @@ public class SudokuGUI extends JFrame implements ObserverBase {
 	
 	private void newSingle() {
 		statusLabel.setText("enter puzzle...");
+		for (int i = 0; i < 81; i++) {
+			cells[i].setText("");
+		}
 		cardLayout.show(cardPanel, SINGLE_SOLVE_PANEL);
 	}
 	
@@ -183,7 +186,7 @@ public class SudokuGUI extends JFrame implements ObserverBase {
 		about = new JMenuItem("About");
 		helpMenu.add(about);
 		
-		// Add menus
+		// Add menus to menubar
 		menuBar.add(fileMenu);
 		menuBar.add(helpMenu);
 	}

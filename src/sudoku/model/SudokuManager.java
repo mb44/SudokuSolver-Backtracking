@@ -11,7 +11,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
-import sudoku.model.sudoku.SudokuGame;
+import sudoku.model.game.SudokuGame;
 import sudoku.util.Observable;
 
 public class SudokuManager extends Observable implements SudokuModel, Callable<Void> {

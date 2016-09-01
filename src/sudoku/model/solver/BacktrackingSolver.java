@@ -4,17 +4,12 @@
 
 package sudoku.model.solver;
 
-import sudoku.model.sudoku.SudokuGame;
-
 public class BacktrackingSolver implements SudokuSolver {
-	public BacktrackingSolver(SudokuGame sudoku) {
-	}
-	
 	public void solve(int[][] puzzle) {
 		solveSudoku(puzzle, 0, 0);
 	}
 
-	public boolean solveSudoku(int board[][], int x, int y) {
+	private boolean solveSudoku(int board[][], int x, int y) {
 		int e[] = getNextEmptySquare(board, x, y);
 		if (e == null) {
 			return true;
@@ -25,11 +20,6 @@ public class BacktrackingSolver implements SudokuSolver {
 			for (int i = 1; i <= 9; i++) {
 				board[newY][newX] = i;
 				if (isSafe(board, newX, newY)) {
-					try {
-						Thread.sleep(5);
-					} catch (InterruptedException exc) {
-						exc.printStackTrace();
-					}
 					boolean res = solveSudoku(board, newX, newY);
 					// Return if success, yay!
 					if (res)
@@ -75,8 +65,7 @@ public class BacktrackingSolver implements SudokuSolver {
 			if (!used[board[i][x] - 1]) {
 				used[board[i][x] - 1] = true;
 			} else {
-				return false; // number is already represented elsewhere in this
-								// column
+				return false; // number is already represented elsewhere in this column
 			}
 		}
 		return true; // no duplicates found
@@ -93,8 +82,7 @@ public class BacktrackingSolver implements SudokuSolver {
 			if (!used[res[y][i] - 1]) {
 				used[res[y][i] - 1] = true;
 			} else {
-				return false; // number is already represented elsewhere in this
-								// row
+				return false; // number is already represented elsewhere in this row
 			}
 		}
 		return true; // no duplicates found
@@ -120,8 +108,7 @@ public class BacktrackingSolver implements SudokuSolver {
 					// first time we encounter number in this grid
 					used[res[row + rowOffset][col + colOffset] - 1] = true;
 				} else {
-					return false; // number is already represented elsewhere in
-									// this grid
+					return false; // number is already represented elsewhere in this grid
 				}
 			}
 		}
@@ -131,7 +118,7 @@ public class BacktrackingSolver implements SudokuSolver {
 	private int[] getNextEmptySquare(int board[][], int x, int y) {
 		int res[] = new int[2];
 
-		// First check starting a column=x
+		// First check starting at column=x
 		for (int col = x; col < 9; col++) {
 			if (board[y][col] == 0) {
 				res[0] = col;

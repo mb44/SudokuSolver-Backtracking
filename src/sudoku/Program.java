@@ -7,8 +7,8 @@ package sudoku;
 import sudoku.controller.Controller;
 import sudoku.model.SudokuManager;
 import sudoku.model.SudokuModel;
+import sudoku.model.game.SudokuGame;
 import sudoku.model.solver.BacktrackingSolver;
-import sudoku.model.sudoku.SudokuGame;
 import sudoku.view.SudokuGUI;
 
 public class Program {
